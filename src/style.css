@@ -11,25 +11,33 @@ body {
 }
 /***************** HEADER CSS *****************/
 #header {
-	flex: 0.4;
-	border: 1px red solid;
+	display: flex;
+	justify-content: center;
+	height: 64px;
+	color: rgb(250, 249, 246);
 }
 #header ul {
+	display: flex;
+	justify-content: space-around;
+	width: 300px;
 	list-style-type: none;
-	padding: 0;
-	margin: 0;
+}
+
+.site-header-wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 90%;
 }
 
 #content {
 	min-height: 100%;
 	display: flex;
 	flex-direction: column;
-	background-color: rgba(0, 0, 0, 0.4);
-}
-#footer {
-	flex: 0.2;
+	background-color: #00000066;
 }
 
+/***************** MAIN CSS *****************/
 #main {
 	display: flex;
 	align-items: center;
@@ -42,7 +50,11 @@ body {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-
+	color: rgb(250, 249, 246);
 	width: 400px;
 	height: 400px;
+}
+/***************** footer CSS *****************/
+#footer {
+	flex: 0.2;
 }
