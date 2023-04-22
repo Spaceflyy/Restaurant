@@ -1,6 +1,4 @@
 * {
-	margin: 0;
-	padding: 0;
 	box-sizing: border-box;
 }
 
@@ -8,20 +6,43 @@ body {
 	height: 100svh;
 	background: url("./grilledMeat.jpg");
 	background-size: cover;
+	margin: 0;
+	padding: 0;
 }
-#content {
-	height: 100%;
-	display: grid;
-	grid-template-rows: 0.8fr 8fr 0.5fr;
-	flex-direction: column;
-	background-color: rgba(0, 0, 0, 0.4);
-	border: red solid 1px;
+/***************** HEADER CSS *****************/
+#header {
+	flex: 0.4;
+	border: 1px red solid;
+}
+#header ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
 }
 
-#header,
-#footer,
-#main {
-	border: orange 1px solid;
+#content {
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+	background-color: rgba(0, 0, 0, 0.4);
 }
+#footer {
+	flex: 0.2;
+}
+
 #main {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex: 2;
+}
+
+#mainLogo {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	width: 400px;
+	height: 400px;
 }
