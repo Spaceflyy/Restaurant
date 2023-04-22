@@ -1,3 +1,27 @@
-h1 {
-	color: red;
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	height: 100svh;
+	background: url("./grilledMeat.jpg");
+	background-size: cover;
+}
+#content {
+	height: 100%;
+	display: grid;
+	grid-template-rows: 0.8fr 8fr 0.5fr;
+	flex-direction: column;
+	background-color: rgba(0, 0, 0, 0.4);
+	border: red solid 1px;
+}
+
+#header,
+#footer,
+#main {
+	border: orange 1px solid;
+}
+#main {
 }
