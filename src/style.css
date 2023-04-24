@@ -1,10 +1,10 @@
 * {
-	margin: 0;
-	padding: 0;
 	box-sizing: border-box;
 }
 
 body {
+	margin: 0;
+	padding: 0;
 	height: 100svh;
 }
 
@@ -16,6 +16,7 @@ body {
 }
 
 /***************** HEADER CSS *****************/
+
 #header {
 	display: flex;
 	justify-content: center;
@@ -76,18 +77,33 @@ body {
 	width: 80%;
 	display: flex;
 	align-items: center;
-	gap: 20px;
+	gap: 50px;
 	margin: 50px;
 }
-
+.ourStory {
+	max-width: 50%;
+	width: 100%;
+	text-align: justify;
+}
 .ourStory h2 {
 	font-size: 2rem;
 	padding-bottom: 3rem;
 }
 .imageContainer img {
 	height: auto;
-	max-width: 600px;
+	width: auto;
+	max-width: 100%;
+	border-radius: 10px;
 }
+
+.imageContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+}
+
 .gallery-wrapper .imageContainer img {
 	height: auto;
 	max-width: 100%;

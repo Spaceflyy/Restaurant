@@ -1,7 +1,10 @@
 import "./style.css";
-import image1 from "./diningRoom.jpg";
+import createHeader from "./header";
+import { gallerySection, heroSection, storySection } from "./home";
 
-const myImage = new Image();
-myImage.src = image1;
-const element = document.querySelector(".imageContainer");
-element.appendChild(myImage);
+const content = document.getElementById("content");
+
+content.appendChild(createHeader());
+content.appendChild(heroSection());
+content.appendChild(storySection());
+content.appendChild(gallerySection());
