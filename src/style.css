@@ -43,12 +43,15 @@ body {
 
 /***************** MAIN CSS *****************/
 #main {
+	background: url("./grilledMeat.jpg");
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+	height: 100svh;
+
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background: url("./grilledMeat.jpg");
-	background-size: cover;
-	height: 100svh;
 }
 
 #mainLogo {
@@ -79,8 +82,12 @@ body {
 	gap: 50px;
 	margin: 50px;
 }
+
+.content-container .wrapper {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+}
 .ourStory {
-	max-width: 50%;
 	width: 100%;
 	text-align: justify;
 }
