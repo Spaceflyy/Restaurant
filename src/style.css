@@ -1,3 +1,6 @@
+:root {
+	--textcolour: rgb(250, 249, 246);
+}
 * {
 	box-sizing: border-box;
 }
@@ -23,14 +26,22 @@ body {
 	position: fixed;
 	min-height: 64px;
 	background-color: rgba(0, 0, 0, 0);
-	color: rgb(250, 249, 246);
+	color: var(--textcolour);
 }
 
-#header ul {
+#nav ul {
 	display: flex;
 	justify-content: space-around;
-	gap: 60px;
 	list-style-type: none;
+	padding: 0;
+	font-size: 1.2rem;
+	width: 300px;
+}
+
+a,
+a:visited {
+	color: var(--textcolour);
+	text-decoration: none;
 }
 
 .site-header-wrapper {
@@ -38,7 +49,10 @@ body {
 	align-items: center;
 	justify-content: space-between;
 	width: 80%;
-	min-width: 525px;
+}
+
+.active {
+	font-weight: 600;
 }
 
 /***************** MAIN CSS *****************/
@@ -58,10 +72,10 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
+	justify-content: space-between;
 	color: rgb(250, 249, 246);
 	width: 400px;
-	height: 400px;
+	height: 300px;
 }
 
 .content-container,
@@ -116,6 +130,17 @@ body {
 	border-radius: 10px;
 	border: white 2px solid;
 }
+
+.logo img {
+	height: 4.2rem;
+	padding: 5px;
+	width: auto;
+}
+
+#main #mainLogo .logo img {
+	height: 12rem;
+}
+
 .gallery-wrapper {
 	display: grid;
 	gap: 10px;
@@ -124,6 +149,17 @@ body {
 	padding: 10px;
 }
 
+@media screen and (max-width: 664px) {
+	.gallery-wrapper {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+@media screen and (max-width: 440px) {
+	.gallery-wrapper {
+		grid-template-columns: 1fr;
+	}
+}
 /***************** footer CSS *****************/
 #footer {
 }

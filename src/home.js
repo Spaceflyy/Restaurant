@@ -1,16 +1,20 @@
 /* eslint-disable no-plusplus */
 import diningImage from "./diningRoom.jpg";
+import logo from "./Logo.svg";
 
+const log = new Image();
+log.src = logo;
 function heroSection() {
 	const main = document.createElement("div");
-	const logo = document.createElement("div");
+	const logoBtnContainer = document.createElement("div");
 	const buttons = document.createElement("div");
 	const viewMenubtn = document.createElement("input");
 	const contactbtn = document.createElement("input");
-	const mainTitle = document.createElement("h1");
-	mainTitle.innerHTML = "Prime Cuts";
+	const mainTitle = document.createElement("div");
+	mainTitle.classList.add("logo");
+	mainTitle.appendChild(log);
 
-	logo.setAttribute("id", "mainLogo");
+	logoBtnContainer.setAttribute("id", "mainLogo");
 	main.setAttribute("id", "main");
 
 	viewMenubtn.setAttribute("type", "button");
@@ -20,9 +24,9 @@ function heroSection() {
 	contactbtn.setAttribute("value", "Contact Us");
 	buttons.appendChild(viewMenubtn);
 	buttons.appendChild(contactbtn);
-	logo.appendChild(mainTitle);
-	logo.appendChild(buttons);
-	main.appendChild(logo);
+	logoBtnContainer.appendChild(mainTitle);
+	logoBtnContainer.appendChild(buttons);
+	main.appendChild(logoBtnContainer);
 
 	return main;
 }
