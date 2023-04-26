@@ -14,14 +14,12 @@ function createHeader() {
 	const home = document.createElement("li");
 	const menu = document.createElement("li");
 	const contact = document.createElement("li");
+	home.innerHTML = "Home";
 	menu.innerHTML = "Menu";
 	contact.innerHTML = "Contact";
-	const homeLink = document.createElement("a");
-	homeLink.innerHTML = "Home";
-	homeLink.href = "./index.html";
-	// const menuLink = document.createElement("a");
-	// const contactLink = document.createElement("a");
-	home.appendChild(homeLink);
+	home.setAttribute("id", "homeBtn");
+	menu.setAttribute("id", "menuBtn");
+	contact.setAttribute("id", "contactBtn");
 	ulList.appendChild(home);
 	ulList.appendChild(menu);
 	ulList.appendChild(contact);
@@ -44,4 +42,19 @@ window.addEventListener("scroll", () => {
 		})`;
 	}
 });
-export default createHeader;
+
+const setActive = (activeButton) => {
+	const elms = Array.from(document.querySelector("#nav ul").children);
+	for (let i = 0; i < elms.length; i++) {
+		elms[i].style = "";
+	}
+	const homeButton = document.querySelector(activeButton);
+
+	homeButton.style.borderBottom = "solid 1px var(--textcolour)";
+};
+
+// const homeButton = document.querySelector("#nav ul :nth-child(1)");
+// homeButton.style.borderBottom = "solid 1px var(--textcolour)";
+// homeButton.style.fontWeight = "600";
+
+export { createHeader, setActive };
