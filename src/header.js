@@ -35,13 +35,13 @@ function createHeader() {
 
 	return head;
 }
-window.addEventListener("scroll", () => {
-	if (window.pageYOffset / 600 <= 1) {
-		document.getElementById("header").style.backgroundColor = `rgba(0,0,0,${
-			window.pageYOffset / 600
-		})`;
-	}
-});
+// // window.addEventListener("scroll", () => {
+// // 	if (window.pageYOffset / 600 <= 1) {
+// // 		document.getElementById("header").style.backgroundColor = `rgba(0,0,0,${
+// // 			window.pageYOffset / 600
+// // 		})`;
+// // 	}
+// });
 
 const setActive = (activeButton) => {
 	const elms = Array.from(document.querySelector("#nav ul").children);
@@ -51,10 +51,7 @@ const setActive = (activeButton) => {
 	const homeButton = document.querySelector(activeButton);
 
 	homeButton.style.borderBottom = "solid 1px var(--textcolour)";
+	homeButton.style.fontWeight = "600";
 };
-
-// const homeButton = document.querySelector("#nav ul :nth-child(1)");
-// homeButton.style.borderBottom = "solid 1px var(--textcolour)";
-// homeButton.style.fontWeight = "600";
 
 export { createHeader, setActive };

@@ -1,6 +1,7 @@
 import "./style.css";
 import { createHeader, setActive } from "./header";
 import { gallerySection, heroSection, storySection } from "./home";
+import test from "./menu";
 
 const content = document.getElementById("content");
 content.appendChild(createHeader());
@@ -23,10 +24,11 @@ homeBtn.addEventListener("click", () => {
 });
 
 menuBtn.addEventListener("click", () => {
-	// const elms = Array.from(content.children);
-	// for (let i = 1; i < elms.length; i++) {
-	// 	content.removeChild(elms[i]);
-	// }
+	const elms = Array.from(content.children);
+	for (let i = 1; i < elms.length; i++) {
+		content.removeChild(elms[i]);
+	}
+	test();
 
 	setActive("#menuBtn");
 });
