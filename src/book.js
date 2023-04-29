@@ -1,5 +1,7 @@
 const createBookingForm = () => {
+	const wrapper = document.createElement("div");
 	const spacer = document.createElement("div");
+	const title = document.createElement("h1");
 	const formContainer = document.createElement("div");
 	const form = document.createElement("form");
 	const label1 = document.createElement("label");
@@ -15,8 +17,14 @@ const createBookingForm = () => {
 	const label6 = document.createElement("label");
 	const date = document.createElement("input");
 	const label7 = document.createElement("label");
-	const extraInfo = document.createElement("textarea");
+	const extraInfo = document.createElement("input");
+	const textAreaContainer = document.createElement("div");
+
+	wrapper.classList.add("wrapper");
+	textAreaContainer.classList.add("text-area-container");
 	formContainer.classList.add("form-container");
+	title.innerHTML = "Make a reservation";
+
 	label1.setAttribute("for", "first-name");
 	label1.innerHTML = "First Name:";
 	fnInput.setAttribute("type", "text");
@@ -49,9 +57,6 @@ const createBookingForm = () => {
 
 	label7.setAttribute("for", "info");
 	label7.innerHTML = "Message (Optional):";
-
-	extraInfo.setAttribute("rows", "4");
-	extraInfo.setAttribute("cols", "40");
 	extraInfo.setAttribute("id", "info");
 
 	numGuests.setAttribute("id", "num-guests");
@@ -67,17 +72,20 @@ const createBookingForm = () => {
 	label5.appendChild(numGuests);
 	label6.appendChild(date);
 	label7.appendChild(extraInfo);
-
+	textAreaContainer.appendChild(label7);
 	form.appendChild(label1);
 	form.appendChild(label2);
 	form.appendChild(label3);
 	form.appendChild(label4);
 	form.appendChild(label5);
 	form.appendChild(label6);
-	form.appendChild(label7);
+	form.appendChild(textAreaContainer);
 
+	wrapper.appendChild(title);
+	wrapper.appendChild(formContainer);
 	formContainer.appendChild(form);
-	return { spacer, formContainer };
+
+	return { spacer, wrapper };
 };
 
 export default createBookingForm;
