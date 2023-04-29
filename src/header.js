@@ -16,7 +16,7 @@ function createHeader() {
 	const contact = document.createElement("li");
 	home.innerHTML = "Home";
 	menu.innerHTML = "Menu";
-	contact.innerHTML = "Contact";
+	contact.innerHTML = "Book";
 	home.setAttribute("id", "homeBtn");
 	menu.setAttribute("id", "menuBtn");
 	contact.setAttribute("id", "contactBtn");
@@ -35,17 +35,10 @@ function createHeader() {
 
 	return head;
 }
-// // window.addEventListener("scroll", () => {
-// // 	if (window.pageYOffset / 600 <= 1) {
-// // 		document.getElementById("header").style.backgroundColor = `rgba(0,0,0,${
-// // 			window.pageYOffset / 600
-// // 		})`;
-// // 	}
-// });
 
 const setActive = (activeButton) => {
 	const elms = Array.from(document.querySelector("#nav ul").children);
-	for (let i = 0; i < elms.length; i++) {
+	for (let i = 0; i < elms.length; i += 1) {
 		elms[i].style = "";
 	}
 	const homeButton = document.querySelector(activeButton);

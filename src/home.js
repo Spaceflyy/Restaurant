@@ -6,14 +6,19 @@ const log = new Image();
 log.src = logo;
 function heroSection() {
 	const main = document.createElement("div");
+	const darkBg = document.createElement("div");
 	const logoBtnContainer = document.createElement("div");
+	const openingHours = document.createElement("p");
 	const buttons = document.createElement("div");
 	const viewMenubtn = document.createElement("input");
 	const contactbtn = document.createElement("input");
 	const mainTitle = document.createElement("div");
+	darkBg.classList.add("darkBg");
+	buttons.classList.add("btnContainer");
 	mainTitle.classList.add("logo");
 	mainTitle.appendChild(log);
-
+	openingHours.innerHTML =
+		"Open weekdays 9AM - 5PM <br></br> 123 Fake Street, Fake City, SO45 XG3";
 	logoBtnContainer.setAttribute("id", "mainLogo");
 	main.setAttribute("id", "main");
 
@@ -21,11 +26,13 @@ function heroSection() {
 	contactbtn.setAttribute("type", "button");
 
 	viewMenubtn.setAttribute("value", "View Menu");
-	contactbtn.setAttribute("value", "Contact Us");
+	contactbtn.setAttribute("value", "Book Now");
 	buttons.appendChild(viewMenubtn);
 	buttons.appendChild(contactbtn);
 	logoBtnContainer.appendChild(mainTitle);
+	logoBtnContainer.appendChild(openingHours);
 	logoBtnContainer.appendChild(buttons);
+	main.appendChild(darkBg);
 	main.appendChild(logoBtnContainer);
 
 	return main;
