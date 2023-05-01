@@ -40,6 +40,6 @@ bookBtn.addEventListener("click", () => {
 		content.removeChild(elms[i]);
 	}
 	content.appendChild(createBookingForm().spacer);
-	content.appendChild(createBookingForm().wrapper);
+	content.appendChild(createBookingForm().contentContainer);
 	setActive("#contactBtn");
 });

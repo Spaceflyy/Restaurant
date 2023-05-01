@@ -1,7 +1,8 @@
 import steak from "./steak.jpg";
-
-const myimg = new Image();
-myimg.srt = steak;
+import ribs from "./ribs.jpg";
+import rump from "./rump.jpg";
+import sirloin from "./sirloin.jpg";
+import burger from "./burger.jpg";
 
 const createMenu = () => {
 	const container = document.createElement("div");
@@ -23,18 +24,26 @@ const createMenu = () => {
 	wrapper.classList.add("wrapper");
 	galleryWrapper.classList.add("gallery-wrapper");
 
-	for (let i = 0; i < 6; i += 1) {
-		const imgs = new Image();
-		imgs.src = steak;
-		const imgCont = document.createElement("div");
-		const menuItemDescription = document.createElement("p");
-		menuItemDescription.innerHTML =
-			"£16 This is where the dish will be described as well as the price";
-		imgCont.classList.add("imageContainer");
-		imgCont.appendChild(imgs);
-		imgCont.appendChild(menuItemDescription);
-		galleryWrapper.appendChild(imgCont);
-	}
+	const steakImg = new Image();
+	steakImg.src = steak;
+	const ribsImg = new Image();
+	ribsImg.src = ribs;
+	const rumpImg = new Image();
+	rumpImg.src = rump;
+	const sirloinImg = new Image();
+	sirloinImg.src = sirloin;
+	const burgerImg = new Image();
+	burgerImg.src = steak;
+
+	const imgCont = document.createElement("div");
+	const menuItemDescription = document.createElement("p");
+	menuItemDescription.innerHTML =
+		"£16 This is where the dish will be described as well as the price";
+	imgCont.classList.add("imageContainer");
+	imgCont.appendChild(steakImg);
+	imgCont.appendChild(menuItemDescription);
+	galleryWrapper.appendChild(imgCont);
+
 	wrapper.appendChild(title);
 	container.appendChild(wrapper);
 	wrapper.appendChild(galleryWrapper);
