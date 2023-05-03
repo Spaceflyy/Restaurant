@@ -1,9 +1,18 @@
 /* eslint-disable no-plusplus */
 import diningImage from "./diningRoom.jpg";
 import logo from "./Logo.svg";
+import beer from "./imgs/home/beer.jpg";
+import man from "./imgs/home/man.jpg";
+import meatdish from "./imgs/home/meatDish.jpg";
+import serving from "./imgs/home/servingFood.jpg";
+import steakdish from "./imgs/home/steakdish.jpg";
+import restaurant from "./imgs/home/restaurant.jpg";
+
+const images = [beer, man, serving, meatdish, steakdish, restaurant];
 
 const log = new Image();
 log.src = logo;
+
 function heroSection() {
 	const main = document.createElement("div");
 	const darkBg = document.createElement("div");
@@ -85,7 +94,7 @@ function gallerySection() {
 
 	for (let i = 0; i < 6; i++) {
 		const imgs = new Image();
-		imgs.src = diningImage;
+		imgs.src = images[i];
 		const cont = document.createElement("div");
 		cont.classList.add("imageContainer");
 		cont.appendChild(imgs);
