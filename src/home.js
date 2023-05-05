@@ -1,4 +1,8 @@
 /* eslint-disable no-plusplus */
+import { setActive } from "./header";
+import createBookingForm from "./book";
+import createMenu from "./menu";
+
 import diningImage from "./diningRoom.jpg";
 import logo from "./Logo.svg";
 import beer from "./imgs/home/beer.jpg";
@@ -7,7 +11,9 @@ import meatdish from "./imgs/home/meatDish.jpg";
 import serving from "./imgs/home/servingFood.jpg";
 import steakdish from "./imgs/home/steakdish.jpg";
 import restaurant from "./imgs/home/restaurant.jpg";
+import createFooter from "./footer";
 
+const content = document.getElementById("content");
 const images = [beer, man, serving, meatdish, steakdish, restaurant];
 
 const log = new Image();
@@ -44,6 +50,27 @@ function heroSection() {
 	main.appendChild(darkBg);
 	main.appendChild(logoBtnContainer);
 
+	contactbtn.addEventListener("click", () => {
+		const elms = Array.from(content.children);
+		for (let i = 1; i < elms.length; i += 1) {
+			content.removeChild(elms[i]);
+		}
+
+		content.appendChild(createBookingForm().spacer);
+		content.appendChild(createBookingForm().contentContainer);
+		content.appendChild(createFooter());
+		setActive("#contactBtn");
+	});
+	viewMenubtn.addEventListener("click", () => {
+		const elms = Array.from(content.children);
+		for (let i = 1; i < elms.length; i += 1) {
+			content.removeChild(elms[i]);
+		}
+		content.appendChild(createMenu().spacer);
+		content.appendChild(createMenu().container);
+		content.appendChild(createFooter());
+		setActive("#menuBtn");
+	});
 	return main;
 }
 

@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
 :root {
 	--textcolour: rgba(250, 249, 246, 0.87);
 	--darkcolour: #0c0c0c;
@@ -12,10 +14,16 @@ body {
 	padding: 0;
 	height: 100%;
 	color: var(--textcolour);
+	font-family: "Roboto", sans-serif;
 }
 
 #content {
 	height: 100%;
+}
+
+a {
+	text-decoration: none;
+	color: var(--darkcolour);
 }
 
 /***************** HEADER CSS *****************/
@@ -179,6 +187,25 @@ body {
 }
 /***************** footer CSS *****************/
 #footer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 32px;
+	color: var(--darkcolour);
+}
+
+#footer > .wrapper {
+	display: flex;
+	justify-content: center;
+	gap: 1rem;
+	align-items: center;
+	margin: 0px;
+}
+
+#footer img {
+	height: 1.7rem;
+	padding: 2px;
+	width: auto;
 }
 
 /******************menu css try to merge with current stuff*******************/
@@ -192,8 +219,10 @@ form {
 	flex-direction: column;
 	align-items: center;
 	padding: 0;
-
 	gap: 50px;
+}
+.outter-form > p {
+	width: 70%;
 }
 
 .outter-form li,
@@ -204,7 +233,7 @@ form {
 
 label {
 	display: inline-block;
-	width: 135px;
+	width: 145px;
 	text-align: left;
 	padding-right: 10px;
 }
@@ -220,9 +249,8 @@ li input {
 input[type="button"],
 input[type="submit"] {
 	background-color: #3a3a3a;
-	border: solid 1px #696969;
+	border: none;
 	border-radius: 5px;
-
 	text-shadow: 0px 2px 0px #000000;
 	cursor: pointer;
 	color: #faf9f6;

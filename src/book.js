@@ -1,3 +1,8 @@
+const handleForm = (e) => {
+	e.preventDefault();
+	alert("Thank you for your booking. Someone will be in touch shortly.");
+};
+
 const createBookingForm = () => {
 	const contentContainer = document.createElement("div");
 	const formElemsOutter = document.createElement("ul");
@@ -30,6 +35,8 @@ const createBookingForm = () => {
 	const extraInfo = document.createElement("textarea");
 	const submitBtn = document.createElement("input");
 	const textAreaContainer = document.createElement("div");
+	const requiredInfo = document.createElement("p");
+	requiredInfo.innerHTML = "<strong>*</strong> indicates required field.";
 
 	formElemsOutter.classList.add("outter-form");
 	contentContainer.classList.add("gallery-content-container");
@@ -39,47 +46,57 @@ const createBookingForm = () => {
 	title.innerHTML = "Make a reservation";
 	subTitle.innerHTML =
 		"Please submit a reservation here and someone will confirm your booking. <br></br> You can also call <strong>02380459710</strong> to book over the phone.";
+
 	fnLi.appendChild(label1);
 	label1.setAttribute("for", "first-name");
-	label1.innerHTML = "First Name:";
+	label1.innerHTML = "First Name *:";
 	fnInput.setAttribute("type", "text");
 	fnInput.setAttribute("id", "first-name");
+	fnInput.setAttribute("required", "");
 
 	lnLi.appendChild(label2);
-	label2.setAttribute("for", "last-name");
-	label2.innerHTML = "Last Name:";
+	label2.setAttribute("for", "last-name ");
+	label2.innerHTML = "Last Name *:";
 	lnInput.setAttribute("type", "text");
 	lnInput.setAttribute("id", "last-name");
+	lnInput.setAttribute("required", "");
 
 	mobInputLi.appendChild(label3);
 	label3.setAttribute("for", "mob-no");
-	label3.innerHTML = "Mobile Number:";
+	label3.innerHTML = "Mobile Number *:";
 	mobNoInput.setAttribute("type", "tel");
 	mobNoInput.setAttribute("id", "mob-no");
+	mobNoInput.setAttribute("required", "");
 
 	emailLi.appendChild(label4);
 	label4.setAttribute("for", "email");
-	label4.innerHTML = "Email:";
+	label4.innerHTML = "Email (Optional):";
 	emailInput.setAttribute("type", "email");
 	emailInput.setAttribute("id", "email");
 
 	guestLi.appendChild(label5);
 	label5.setAttribute("for", "num-guests");
-	label5.innerHTML = "Number of Guests:";
+	label5.innerHTML = "Number of Guests *:";
 	numGuests.setAttribute("type", "number");
 	numGuests.setAttribute("id", "num-guests");
+	numGuests.setAttribute("required", "");
 
 	dateLi.appendChild(label6);
 	label6.setAttribute("for", "date");
-	label6.innerHTML = "Date:";
+	label6.innerHTML = "Date *:";
 	date.setAttribute("type", "datetime-local");
 	date.setAttribute("id", "date");
+	date.setAttribute("required", "");
 
 	infoLi.appendChild(label7);
 	label7.setAttribute("for", "info");
 	label7.innerHTML = "Message (Optional):";
 	extraInfo.setAttribute("id", "info");
 	extraInfo.setAttribute("rows", "6");
+	extraInfo.setAttribute(
+		"placeholder",
+		"E.g. Allergies or special requirements"
+	);
 
 	submitBtn.setAttribute("type", "submit");
 	submitBtn.setAttribute("for", "booking-form");
@@ -90,6 +107,11 @@ const createBookingForm = () => {
 	form.setAttribute("method", "post");
 	spacer.classList.add("spacer");
 
+	form.addEventListener("submit", (e) => {
+		handleForm(e);
+		form.reset();
+	});
+
 	fnLi.appendChild(fnInput);
 	lnLi.appendChild(lnInput);
 	mobInputLi.appendChild(mobNoInput);
@@ -97,7 +119,7 @@ const createBookingForm = () => {
 	guestLi.appendChild(numGuests);
 	dateLi.appendChild(date);
 	infoLi.appendChild(extraInfo);
-
+	formElemsOutter.appendChild(requiredInfo);
 	formElemsOutter.appendChild(fnLi);
 	formElemsOutter.appendChild(lnLi);
 	formElemsOutter.appendChild(mobInputLi);
@@ -106,10 +128,12 @@ const createBookingForm = () => {
 	formElemsOutter.appendChild(dateLi);
 	formElemsOutter.appendChild(infoLi);
 	formElemsOutter.appendChild(submitBtn);
+
 	form.appendChild(formElemsOutter);
 	wrapper.appendChild(title);
 	wrapper.appendChild(subTitle);
 	wrapper.appendChild(formContainer);
+
 	formContainer.appendChild(form);
 	contentContainer.appendChild(wrapper);
 

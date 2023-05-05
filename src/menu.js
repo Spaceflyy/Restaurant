@@ -35,14 +35,9 @@ const createMenu = () => {
 	const wrapper = document.createElement("div");
 	const galleryWrapper = document.createElement("div");
 	const spacer = document.createElement("div");
-	const btnContainer = document.createElement("div");
-	btnContainer.classList.add("btnContainer");
 
 	const title = document.createElement("h1");
-	const bookBtn = document.createElement("input");
-	bookBtn.setAttribute("type", "button");
-	bookBtn.setAttribute("value", "Book Now");
-	btnContainer.appendChild(bookBtn);
+
 	title.innerText = "Menu";
 	spacer.classList.add("spacer");
 
@@ -94,8 +89,6 @@ const createMenu = () => {
 	wrapper.appendChild(title);
 	container.appendChild(wrapper);
 	wrapper.appendChild(galleryWrapper);
-	wrapper.appendChild(btnContainer);
-
 	return { spacer, container };
 };
 
