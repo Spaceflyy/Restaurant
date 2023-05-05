@@ -1,9 +1,9 @@
-import steak from "./steak.jpg";
-import ribs from "./ribs.jpg";
-import rump from "./rump.jpg";
-import sirloin from "./sirloin.jpg";
-import burger from "./burger.jpg";
-import fillet from "./fillet.jpg";
+import steak from "./imgs/menu/steak.jpg";
+import ribs from "./imgs/menu/ribs.jpg";
+import rump from "./imgs/menu/rump.jpg";
+import sirloin from "./imgs/menu/sirloin.jpg";
+import burger from "./imgs/menu/burger.jpg";
+import fillet from "./imgs/menu/fillet.jpg";
 
 const steakImg = new Image();
 steakImg.src = steak;

@@ -1,4 +1,4 @@
-import git from "./github-mark.svg";
+import git from "./imgs/logos/github-mark.svg";
 
 const gitLogo = new Image();
 gitLogo.src = git;

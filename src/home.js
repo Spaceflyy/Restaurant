@@ -3,8 +3,8 @@ import { setActive } from "./header";
 import createBookingForm from "./book";
 import createMenu from "./menu";
 
-import diningImage from "./diningRoom.jpg";
-import logo from "./Logo.svg";
+import diningImage from "./imgs/home/diningRoom.jpg";
+import logo from "./imgs/logos/Logo.svg";
 import beer from "./imgs/home/beer.jpg";
 import man from "./imgs/home/man.jpg";
 import meatdish from "./imgs/home/meatDish.jpg";

@@ -1,4 +1,4 @@
-import logo from "./Logo.svg";
+import logo from "./imgs/logos/Logo.svg";
 
 const log = new Image();
 log.src = logo;

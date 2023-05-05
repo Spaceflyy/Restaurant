@@ -1,4 +1,5 @@
 const path = require("path");
+// eslint-disable-next-line import/no-extraneous-dependencies
 
 module.exports = {
 	mode: "development",
@@ -6,10 +7,13 @@ module.exports = {
 	devServer: {
 		static: "./dist",
 	},
+
 	output: {
 		filename: "main.js",
 		path: path.resolve(__dirname, "dist"),
+		assetModuleFilename: "imgs/[name][ext][query]",
 	},
+
 	module: {
 		rules: [
 			{
