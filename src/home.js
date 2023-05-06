@@ -3,7 +3,7 @@ import { setActive } from "./header";
 import createBookingForm from "./book";
 import createMenu from "./menu";
 
-import diningImage from "./imgs/home/diningRoom.jpg";
+import chef from "./imgs/home/chef.jpg";
 import logo from "./imgs/logos/Logo.svg";
 import beer from "./imgs/home/beer.jpg";
 import man from "./imgs/home/man.jpg";
@@ -75,8 +75,8 @@ function heroSection() {
 }
 
 function storySection() {
-	const diningImg = new Image();
-	diningImg.src = diningImage;
+	const chefImg = new Image();
+	chefImg.src = chef;
 
 	const container = document.createElement("div");
 	const wrapper = document.createElement("div");
@@ -86,23 +86,15 @@ function storySection() {
 	const title = document.createElement("h2");
 	title.innerHTML = "Our Story";
 	text.innerHTML =
-		"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti maxime molestias libero soluta perspiciatis repudiandae vitae, inventore pariatur aut suscipit nam et. Quod ullam facere at, nemo rerum laudantium ea!";
+		"Once upon a time, there was a skilled butcher named John who had a passion for selecting the finest cuts of meat. He had a reputation for being able to identify the best meat and cuts in the market, and he had a loyal following of customers who came to him for the highest quality meat. <br></br>One day, John had an idea. He wanted to showcase his expertise by opening a restaurant that would specialize in serving only the best meat cuts. He would call it Prime Cuts, a name that would reflect his dedication to excellence. <br></br> At Prime Cuts, John made sure that every detail was perfect, from the hand-selected cuts of meat to the impeccable service and ambiance. The restaurant quickly gained a reputation for being the go-to destination for meat lovers in the city.<br></br>Over time, John trained a team of skilled chefs and butchers who shared his passion for quality. They worked together to source the best meats from local farmers and ranchers, and they constantly experimented with new recipes and techniques to elevate the dining experience at Prime Cuts. <br></br> Come and visit us today and see why Prime Cuts is the most popular steakhouse in town!";
 	imgcontainer.classList.add("imageContainer");
-	imgcontainer.appendChild(diningImg);
+	imgcontainer.appendChild(chefImg);
 	container.classList.add("content-container");
 	wrapper.classList.add("wrapper");
 	story.classList.add("ourStory");
 
-	const text2 = text.cloneNode(true);
-	const text3 = text.cloneNode(true);
-	const text4 = text.cloneNode(true);
-	const text5 = text.cloneNode(true);
 	story.appendChild(title);
 	story.appendChild(text);
-	story.appendChild(text2);
-	story.appendChild(text3);
-	story.appendChild(text4);
-	story.appendChild(text5);
 	wrapper.appendChild(story);
 	wrapper.appendChild(imgcontainer);
 	container.appendChild(wrapper);

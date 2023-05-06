@@ -1,5 +1,6 @@
 const handleForm = (e) => {
 	e.preventDefault();
+	// eslint-disable-next-line no-alert
 	alert("Thank you for your booking. Someone will be in touch shortly.");
 };
 

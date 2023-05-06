@@ -82,7 +82,6 @@ a {
 	background-position: center;
 	background-size: cover;
 	background-attachment: fixed;
-
 	height: 100svh;
 	width: 100%;
 }
@@ -107,7 +106,8 @@ a {
 }
 
 .content-container,
-.gallery-content-container {
+.gallery-content-container,
+.menu-gallery-content-container {
 	display: flex;
 	align-items: center;
 	flex-direction: column;
@@ -141,7 +141,7 @@ a {
 .imageContainer {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
+	justify-content: center;
 	height: 100%;
 	width: 100%;
 }
